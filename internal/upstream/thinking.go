@@ -29,7 +29,7 @@ import (
 // defaultDeepSeekEffort 官方客户端默认档兜底（configure thinking 无来源时 warn fallback to 'high'，
 // REASONING_SUPPLEMENTS.defaultEffort 亦为 "high"）。补入后走 normalizeReasoningEffort 降级管线，
 // 模型不支持 high 时自动落到 ≤high 的最高支持档。
-const defaultDeepSeekEffort = "high"
+const defaultDeepSeekEffort = "max"
 
 // lookupDefaultEffort 从 FetchModels 缓存的 defaultEfforts 表按模型名查默认档。
 // nil map 或模型未缓存 → 空串（thinking.go 回退硬编码 high）。
